@@ -1,0 +1,47 @@
+/* # Widgets
+---------------------------------------------------------------------------------------------------- */
+
+.widget {
+	word-wrap: break-word;
+}
+
+.widget ol > li {
+	list-style-position: inside;
+	list-style-type: decimal;
+	padding-left: 20px;
+	text-indent: -20px;
+}
+
+.widget li li {
+	border: 0;
+	margin: 0 0 0 var(--margin-0);
+	padding: 0;
+}
+
+.widget_calendar table {
+	width: 100%;
+}
+
+.widget_calendar td,
+.widget_calendar th {
+	text-align: center;
+}
+
+/* ## Footer Widget
+---------------------------------------------------------------------- */
+
+.footer-widgets{
+	position: relative;
+	width: 100%;
+	padding-top: var(--margin-0);
+	padding-bottom: var(--margin-0);
+	background-color: $color-primary;
+	color: $color-tint;
+	.wrap{
+		margin:0 auto;
+		max-width: var(--measure-0);
+	}
+	h1,h2,h3,h4,h5,h6,p{
+		color: $color-tint;
+	}
+}

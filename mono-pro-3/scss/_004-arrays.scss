@@ -1,0 +1,28 @@
+/* # Arrays
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Breakpoints
+---------------------------------------------------------------------- */
+$breakpoints: (
+    phone:      $mq-phone,   
+    tablet:     $mq-tablet, 
+    tabletbig:  $mq-tabletbig, 
+    laptop:     $mq-laptop,
+    desktop:    $mq-desktop,
+    large:      $mq-large,
+    huge:       $mq-huge
+);
+
+/* ## Responsive site measure
+---------------------------------------------------------------------- */
+
+$g_site_measure: (
+    null:       ($g_measure_-1),
+    // phone:      ($g_measure_-1),
+    // tablet:     ($g_measure_-1),
+    tabletbig:  ($g_measure_0),
+    // laptop:     ($g_measure_0),
+    // desktop:    ($g_measure_0),
+    // large:      ($g_measure_0),
+    // huge:       ($g_measure_0)
+);

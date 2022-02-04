@@ -1,0 +1,119 @@
+/* Genesis Child Theme
+Theme Name: Mono Pro
+Theme URI: https://github.com/mbernth/mono-pro-3_0_0
+Description: This is a theme by mono voce, created for the Genesis Framework.
+Author: mono voce aps
+Author URI: https://www.monovoce.com/
+Template: genesis
+Version: 3.0.0
+License: GPL-2.0-or-later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Text Domain: mono-pro
+*/
+
+// Table of Contents
+//	- 001 # HTML5 Reset
+//		    ## Baseline Normalize
+//		    ## Box Sizing
+//          ## Float Clearing
+	@import "001-reset";
+//  - 002 # Mixins
+//	        ## Typography
+//	        ## Border Radius
+//	        ## Gradients
+//          ## Grid
+//          ## Tint and shade
+	@import "002-mixins";
+	@import "002-tint_shade";
+//  - 003 # Variables
+//	        ## Colours
+//	        ## Typography
+//	        ## Media Queries
+//          ## Site Structure
+	@import "003-variables";
+//  - 004 # Arrays
+//	        ## Breakpoints
+//	        ## Responsive Typography
+//			## Gutenberg
+//				### Color mixins
+//				### Gutenberg Front-end Styles
+// 				### Hero Video
+//				### Images and text block
+//				### Flexible Grid block
+	@import "004-arrays";
+	@import "004-gutenberg";
+	@import "004-gutenberg_mono";
+	@import "004-style_guide";
+//	- 005 # Defaults
+//			## Typographical Elements
+//			## Headings
+//			## Objects
+//			## Forms
+//				### Forms Colored Rows
+//			## Tables
+//			## Screen Reader Text
+	@import "005-defaults";
+//	- 006 # Structure and Layout
+//			## Site Container
+//			## Site Inner
+//			## Grid Containers
+//				### Grid Containers coloured backgrounds
+	@import "006-structure_layout";
+//	- 007 # Common Classes
+//			## Avatar
+//			## Genesis
+//			## Search Form
+//			## Titles
+//			## WordPress
+	@import "007-common_classes";
+//	- 008 # Widgets
+//			## Featured Content
+	@import "008-widgets";
+//	- 009 # Plugins
+//			## Skip Links
+	@import "009-plugins";
+	@import "009-flickity";
+	@import "009-flickity_mono";
+	@import "009-mono-icons";
+	@import "009-keyframes";
+	@import "009-pageTransitions";
+	@import "009-timeline";
+
+//	- 010 # Site Header
+//			## Title Area
+	@import "010-site_header";
+//	- 011 # Site Navigation
+//			## Header Menu
+//			## Header Search
+//			## Footer Menu
+//			## Accessible Menu
+	@import "011-site_navigation";
+//	- 012 # Content Area
+//			## Entries
+//			## Entry Messages
+//			## Entry Meta
+//			## Pagination
+//			## Comments
+	@import "012-content_area";
+//	- 013 # Sidebar
+//	@import "013-sidebars";
+//	- 014 # Site Footer
+	@import "014-site_footer";
+//	- 015 Media Queries
+//        # Max-width: 1023px
+	@import "015-max_width_nav";
+//		  # Min-width: phone
+	@import "015-min_width_phone";
+//		  # Min-width: tablet
+	@import "015-min_width_tablet";
+//		  # Min-width: tabletbig
+	@import "015-min_width_tabletbig";
+//		  # Min-width: laptop
+	@import "015-min_width_laptop";
+//		  # Min-width: desktop
+	@import "015-min_width_desktop";
+//		  # Min-width: large
+	@import "015-min_width_large";
+//		  # Min-width: huge
+	@import "015-min_width_huge";

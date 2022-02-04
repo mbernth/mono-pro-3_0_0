@@ -1,0 +1,128 @@
+/* # Site Header
+---------------------------------------------------------------------------------------------------- */
+
+.site-header {
+	position: relative;;
+	margin-top:0px;
+	padding: 40px 0;
+	padding-top: var(--margin-0);
+	padding-bottom: var(--margin-0);
+	width:100%;
+	float:left;
+	background-color: $color-secondary;
+	-webkit-transition: var(--transition-default);
+	-moz-transition:    var(--transition-default);
+	-ms-transition:     var(--transition-default);
+	-o-transition:      var(--transition-default);
+	transition:         var(--transition-default);
+	z-index:300;
+	&.main-menu-open{
+		background-color:rgba(253, 254, 255, 0.95);
+	}
+}
+.has-push-top .site-header,
+.featured-image .has-push-top .site-header,
+.featured-image .has-push-top .site-header.dark,
+.home-section .has-push-top .site-header,
+.home-section .has-push-top .site-header.dark {
+	margin-top:200px;
+}
+
+.site-header > .wrap {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin:0 auto;
+	max-width:90%;
+}
+
+/* ## Title Area
+---------------------------------------------------------------------- */
+
+.title-area {
+	float: left;
+	z-index: 100;
+	p {
+    	margin: 0;
+    	font-size: 0;
+    	line-height: 0;
+    	height: 0;
+	}
+}
+
+.header-full-width .title-area {
+	float:left;
+}
+
+.site-title {
+	font-size: var(--type-h1);
+	line-height: 0;
+	a,
+	a:hover,
+	a:focus {
+		color: $color-shade;
+	}
+}
+
+.title-area .site-title > a {
+  display: block;
+  margin-bottom: 0px;
+	text-indent: -9999px;
+}
+
+.site-description {
+	font-size: 0;
+	line-height: 0;
+	text-indent: -9999px;
+}
+
+.site-description,
+.site-title {
+	margin-bottom: 0;
+}
+
+.header-image .site-description,
+.header-image .site-title {
+	display: block;
+	text-indent: -9999px;
+}
+
+.site-logo {
+    display: block;
+}
+.header-full-width .title-area,
+.site-logo{
+	width: 140px;
+	height: 23px;
+}
+
+svg#logo{
+	fill: $color-primary;
+}
+
+/* ## Before header
+---------------------------------------------------------------------- */
+
+.before-header {
+	float: left;
+	padding:10px 5%;
+	width:100%;
+	background-color: $color-shade;
+	-webkit-transition: var(--transition-default);
+	-moz-transition:    var(--transition-default);
+	-ms-transition:     var(--transition-default);
+	-o-transition:      var(--transition-default);
+	transition:         var(--transition-default);
+	z-index:1000;
+	.wrap{
+		margin:0 auto;
+		max-width:100%;
+	}
+	.widget{
+		font-size: var(--type-small);
+		text-transform:uppercase;
+		letter-spacing:1px;
+		text-align:right;
+	}
+}

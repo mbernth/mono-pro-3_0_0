@@ -1,0 +1,329 @@
+/* # MIXINS
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Typography
+---------------------------------------------------------------------- */
+
+/* Basic Font Sizes mixin */
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin line-height($lineheight: 1.6) {
+  line-height:($lineheight * 10) + px;
+  line-height:$lineheight + rem;
+}
+
+@mixin font($fontsize: 1.6, $lineheight: 1.6) {
+  font-size: ($fontsize * 10) + px;
+  font-size: $fontsize + rem;
+  line-height:($lineheight * 10) + px;
+  line-height:$lineheight + rem;
+}
+
+/* ## Responsive Typography
+---------------------------------------------------------------------- */
+@mixin make-font($fs-g_font) {
+  @if type-of($fs-g_font) == "list" {
+    font-size: nth($fs-g_font, 1) + rem;
+    @if (length($fs-g_font) > 1) {
+      line-height: nth($fs-g_font, 2);
+    }
+    @if (length($fs-g_font) > 2) {
+      font-weight: nth($fs-g_font, 3);
+    }
+    @if (length($fs-g_font) > 3) {
+      color: nth($fs-g_font, 4);
+    }
+  }
+  @else {
+    font-size: $fs-font-size + rem;
+  }
+}
+/*
+@mixin typography($fs-t_font) {
+  @if type-of($fs-t_font) == "list" {
+    font-size: nth($fs-t_font, 1);
+    @if (length($fs-t_font) > 1) {
+      line-height: nth($fs-t_font, 2);
+    }
+    @if (length($fs-t_font) > 2) {
+      font-weight: nth($fs-t_font, 3);
+    }
+  }
+}
+*/
+@mixin typography($fs-t_font) {
+  @if (length($fs-t_font) > 0) {
+    font-size: nth($fs-t_font, 1);
+    @if (length($fs-t_font) > 1) {
+      line-height: nth($fs-t_font, 2);
+    }
+    @if (length($fs-t_font) > 2) {
+      font-weight: nth($fs-t_font, 3);
+    }
+  }
+}
+
+
+
+@mixin font-values($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-g_font in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font($fs-g_font);
+    }
+    @else {
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font($fs-g_font);
+      }
+    }
+  }
+}
+
+/* ## Responsive paddings
+---------------------------------------------------------------------- */
+@mixin padding-values($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-g_site_gap in $fs-map {
+    @if $fs-breakpoint == null {
+      padding: $fs-g_site_gap;
+    }
+    @else {
+      // If $fs-g_site_gap is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        padding: $fs-g_site_gap;
+      }
+    }
+  }
+}
+@mixin padding-top-values($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-g_site_gap in $fs-map {
+    @if $fs-breakpoint == null {
+      padding-top: $fs-g_site_gap;
+    }
+    @else {
+      // If $fs-g_site_gap is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        padding-top: $fs-g_site_gap;
+      }
+    }
+  }
+}
+@mixin padding-right-values($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-g_site_gap in $fs-map {
+    @if $fs-breakpoint == null {
+      padding-right: $fs-g_site_gap;
+    }
+    @else {
+      // If $fs-g_site_gap is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        padding-right: $fs-g_site_gap;
+      }
+    }
+  }
+}
+@mixin padding-bottom-values($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-g_site_gap in $fs-map {
+    @if $fs-breakpoint == null {
+      padding-bottom: $fs-g_site_gap;
+    }
+    @else {
+      // If $fs-g_site_gap is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        padding-bottom: $fs-g_site_gap;
+      }
+    }
+  }
+}
+@mixin padding-left-values($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-g_site_gap in $fs-map {
+    @if $fs-breakpoint == null {
+      padding-left: $fs-g_site_gap;
+    }
+    @else {
+      // If $fs-g_site_gap is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        padding-left: $fs-g_site_gap;
+      }
+    }
+  }
+}
+
+/* ## Responsive margins
+---------------------------------------------------------------------- */
+@mixin margin-values($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-g_site_gap in $fs-map {
+    @if $fs-breakpoint == null {
+      margin: $fs-g_site_gap;
+    }
+    @else {
+      // If $fs-g_site_gap is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        margin: $fs-g_site_gap;
+      }
+    }
+  }
+}
+@mixin margin-top-values($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-g_site_gap in $fs-map {
+    @if $fs-breakpoint == null {
+      margin-top: $fs-g_site_gap;
+    }
+    @else {
+      // If $fs-g_site_gap is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        margin-top: $fs-g_site_gap;
+      }
+    }
+  }
+}
+@mixin margin-right-values($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-g_site_gap in $fs-map {
+    @if $fs-breakpoint == null {
+      margin-right: $fs-g_site_gap;
+    }
+    @else {
+      // If $fs-g_site_gap is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        margin-right: $fs-g_site_gap;
+      }
+    }
+  }
+}
+@mixin margin-bottom-values($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-g_site_gap in $fs-map {
+    @if $fs-breakpoint == null {
+      margin-bottom: $fs-g_site_gap;
+    }
+    @else {
+      // If $fs-g_site_gap is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        margin-bottom: $fs-g_site_gap;
+      }
+    }
+  }
+}
+@mixin margin-left-values($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-g_site_gap in $fs-map {
+    @if $fs-breakpoint == null {
+      margin-left: $fs-g_site_gap;
+    }
+    @else {
+      // If $fs-g_site_gap is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        margin-left: $fs-g_site_gap;
+      }
+    }
+  }
+}
+
+/* ## Responsive Grid Gap
+---------------------------------------------------------------------- */
+@mixin grid-gap-values($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-g_site_gap in $fs-map {
+    @if $fs-breakpoint == null {
+      grid-gap: $fs-g_site_gap;
+    }
+    @else {
+      // If $fs-g_site_gap is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        grid-gap: $fs-g_site_gap;
+      }
+    }
+  }
+}
+
+/* ## Responsive Gridcontainer inside wrap max width
+---------------------------------------------------------------------- */
+@mixin max-width-values($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-g_max_width in $fs-map {
+    @if $fs-breakpoint == null {
+      max-width: $fs-g_max_width;
+    }
+    @else {
+      // If $fs-g_width is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        max-width: $fs-g_max_width;
+      }
+    }
+  }
+}
+
+
+/* ## Border Radius
+---------------------------------------------------------------------- */
+@mixin corners($radius){
+    -webkit-border-radius: $radius + em;
+    -moz-border-radius: $radius + em;
+    border-radius: $radius + em;
+}
+
+/* ## Gradients
+---------------------------------------------------------------------- */
+@mixin linear-gradient($from, $to) {
+	/* Fallback for sad browsers */
+	background-color: $to;
+	/* Mozilla Firefox */
+	background-image:-moz-linear-gradient($from, $to);
+	/* Opera */
+	background-image:-o-linear-gradient($from, $to);
+	/* WebKit (Safari 4+, Chrome 1+) */
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1, $to));
+	/* WebKit (Chrome 11+) */
+	background-image: -webkit-linear-gradient($from, $to);
+	/* IE10 */
+	background-image: -ms-linear-gradient($from, $to);
+	/* W3C */
+	background-image: linear-gradient($from, $to);
+}

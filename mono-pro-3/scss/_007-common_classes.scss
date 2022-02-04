@@ -1,0 +1,165 @@
+/* # Common Classes
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Avatar
+---------------------------------------------------------------------- */
+.avatar {
+	float: left;
+}
+
+.alignleft .avatar,
+.author-box .avatar {
+	margin-right: 20px;
+}
+
+.alignright .avatar {
+	margin-left: 20px;
+}
+
+.comment .avatar {
+	margin: 0 16px 24px 0;
+}
+
+/* ## Genesis
+---------------------------------------------------------------------- */
+
+.breadcrumb {
+	display: block;
+	float: left;
+	width: 100%;
+	background-color: $color-tint;
+	margin-bottom: var(--margin-0);
+	[class^="icon-"]{
+		position: relative;
+		top: 0.313em;
+	}
+}
+.breadcrumb .wrap{
+	width: 90%;
+}
+
+.archive-description{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--measure-0);
+	margin-bottom: var(--margin-0);
+	.archive-title{
+		margin-top: var(--margin-0);
+		padding-top: var(--margin-0);
+	}
+}
+.archive{
+	&--link{
+		&--picture{
+			display: block;
+		}
+	}
+}
+.author-box {
+	width: 90%;
+}
+
+.author-box-title {
+	
+}
+
+.archive-description p:last-child,
+.author-box p:last-child {
+	margin-bottom: 0;
+}
+
+
+/* ## Titles
+---------------------------------------------------------------------- */
+
+.archive-title {
+	font-size: var(--type-entry-title);
+	font-weight: 300;
+}
+
+.entry-title {
+	font-size: var(--type-entry-title);
+	font-weight: 300;
+}
+
+.entry-title a,
+.sidebar .widget-title a {
+	color: $color-primary;
+	text-decoration:none;
+}
+
+.entry-title a:hover,
+.entry-title a:focus {
+	color: tint($color-primary, 20%);
+}
+
+.widget-title {
+	font-size: var(--type-h4);
+}
+
+/* ## WordPress
+---------------------------------------------------------------------- */
+
+a.aligncenter img {
+	display: block;
+	margin: 0 auto;
+}
+
+a.alignnone {
+	display: inline-block;
+}
+
+.alignleft {
+	float: left;
+	text-align: left;
+}
+
+.alignright {
+	float: right;
+	text-align: right;
+	justify-self: end;
+}
+
+a.alignleft,
+a.alignnone,
+a.alignright {
+	max-width: 100%;
+}
+
+img.centered,
+.aligncenter {
+	display: block;
+	margin: 0 auto;
+}
+
+img.alignnone,
+.alignnone {
+	margin-bottom: 0;
+}
+
+a.alignleft,
+img.alignleft,
+.wp-caption.alignleft {
+	margin: 0 var(--margin-0) 0 0;
+}
+
+a.alignright,
+img.alignright,
+.wp-caption.alignright {
+	margin: 0 0 0px var(--margin-0);
+}
+
+.wp-caption-text {
+	margin-top:5px;
+	font-size: var(--type-small);
+}
+
+.entry-content p.wp-caption-text {
+	margin-bottom: 0;
+}
+
+.entry-content .wp-audio-shortcode,
+.entry-content .wp-playlist,
+.entry-content .wp-video {
+	margin: 0 0 var(--margin-0);
+}

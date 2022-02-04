@@ -1,0 +1,21 @@
+/* # Flickerty mono
+---------------------------------------------------------------------------------------------------- */
+.carousel-cell{
+    width: 100%;
+}
+.entry-content ol.flickity-page-dots{
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    bottom: var(--margin-0);
+    li::before{
+        display: none;
+    }
+}
+.flickity-page-dots .dot.is-selected{
+    background: $color-active;
+}
+.flickity-page-dots .dot{
+    background: $color-secondary;
+    opacity: 1;
+}

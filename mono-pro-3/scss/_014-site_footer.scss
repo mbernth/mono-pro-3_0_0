@@ -1,0 +1,18 @@
+/* # Site Footer
+---------------------------------------------------------------------------------------------------- */
+
+.site-footer {
+	display: block;
+	float: left;
+	width: 100%;
+	position:relative;
+	background-color: $color-shade;
+	font-size: var(--type-smaller);
+	color: $color-tint;
+	padding: 15px 0;
+	text-align: center;
+}
+
+.site-footer p {
+	margin-bottom: 0;
+}

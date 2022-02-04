@@ -1,0 +1,321 @@
+/* # Variables
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Colour palette
+---------------------------------------------------------------------- */
+
+/* Shade */
+$color-shade:           #000B12;
+
+/* Tint */
+$color-tint:            #F2F2F2;
+
+/* Primary */
+$color-primary:         #242E36; 
+
+/* Secondary */
+$color-secondary:       #C8CACC; 
+
+/* Active - Active/Focused*/
+$color-active:          #EF405C; 
+
+/* Accent 1 - Succes */
+$color-accent-one:      #4DFFA6; 
+
+/* Accent 2 - Warning */
+$color-accent-two:      #FFF04D; 
+
+/* Accent 3 - Error/Alert */
+$color-accent-three:    #FF4D6A;
+
+/* ### Global colours
+---------------------------------------------------------------------- */
+
+/* Global body values */
+$g_body-background-color:       $color-tint;
+$g_font_color_default:          $color-shade;
+
+/* Default body link */
+$g_font-bread-a-color:          $color-active;
+$g_font-bread-a-hover-color:    $color-active;
+
+/* Mark */
+$g_font-mark-color:             $color-tint;
+$g_font-mark-background-color:  $color-shade;
+
+/* Button */
+$g_font-button_radius: 2;
+
+// Default button
+$g_font-button-background-color:                    $color-active;
+$g_font-button-color:                               $color-tint;
+$g_font-button-color-hover:                         $color-tint;
+$g_font-button-background-color-hover:              tint($color-active, 20%);
+$g_font-button-box-shadow-hover:                    10px 10px 10px 0px rgba(0, 11, 18, 0.25), inset 0 0 200px rgba(230, 230, 230, 0.25);
+
+// Disabled button
+$g_font-button-disabled-background-color:           tint($color-shade, 80%);
+$g_font-button-disabled-color:                      $color-tint;
+$g_font-button-disabled-color-hover:                $color-tint;
+$g_font-button-disabled-background-color-hover:     tint($color-shade, 80%);
+$g_font-button-disabled-box-shadow-hover:           0px 0px 0px 0px rgba(14, 28, 45, 0);
+
+// Primary button
+$g_font-button-primary-background-color:            $color-primary;
+$g_font-button-primary-color:                       $color-tint;
+$g_font-button-primary-color-hover:                 $color-tint;
+$g_font-button-primary-background-color-hover:      tint($color-primary, 20%);
+$g_font-button-primary-box-shadow-hover:            10px 10px 10px 0px rgba(0, 11, 18, 0.25), inset 0 0 200px rgba(230, 230, 230, 0.25);
+
+// Info button
+$g_font-button-info-background-color:               $color-shade;
+$g_font-button-info-color:                          $color-tint;
+$g_font-button-info-color-hover:                    $color-tint;
+$g_font-button-info-background-color-hover:         tint($color-shade, 20%);
+$g_font-button-info-box-shadow-hover:               10px 10px 10px 0px rgba(0, 11, 18, 0.25), inset 0 0 200px rgba(230, 230, 230, 0.25);
+
+// Alert button
+$g_font-button-alert-background-color:              $color-accent-three;
+$g_font-button-alert-color:                         $color-tint;
+$g_font-button-alert-color-hover:                   $color-tint;
+$g_font-button-alert-background-color-hover:        tint($color-accent-three, 20%);
+$g_font-button-alert-box-shadow-hover:              10px 10px 10px 0px rgba(0, 11, 18, 0.25), inset 0 0 200px rgba(230, 230, 230, 0.25);
+
+
+/* ## Defaults Globals
+---------------------------------------------------------------------- */
+$g_scala:   1.25;
+$g_measure: 65ch;
+
+$g_measure_0: $g_measure;
+$g_measure_-1: ($g_measure / $g_scala);
+
+
+/* ## Typography
+---------------------------------------------------------------------- */
+$t_root:    1.28;
+
+
+$t_size_0:  ($t_root * $g_scala);
+
+$t_size_1:  ($t_size_0 * $g_scala);
+$t_size_2:  ($t_size_0 * $g_scala * $g_scala);
+$t_size_3:  ($t_size_0 * $g_scala * $g_scala * $g_scala);
+$t_size_4:  ($t_size_0 * $g_scala * $g_scala * $g_scala * $g_scala);
+$t_size_5:  ($t_size_0 * $g_scala * $g_scala * $g_scala * $g_scala * $g_scala);
+
+$t_size_6:  ($t_size_0 * $g_scala * $g_scala * $g_scala * $g_scala * $g_scala * $g_scala);
+$t_size_7:  ($t_size_0 * $g_scala * $g_scala * $g_scala * $g_scala * $g_scala * $g_scala * $g_scala);
+
+$t_size_-5:  ($t_size_0 / $g_scala / $g_scala / $g_scala / $g_scala / $g_scala);
+$t_size_-4:  ($t_size_0 / $g_scala / $g_scala / $g_scala / $g_scala);
+$t_size_-3:  ($t_size_0 / $g_scala / $g_scala / $g_scala);
+$t_size_-2:  ($t_size_0 / $g_scala / $g_scala);
+$t_size_-1:  ($t_size_0 / $g_scala);
+
+$t_font_size_smallest:      calc(#{$t_size_-3 + rem} + (#{$g_scala + vw} / 10));
+$t_font_size_smaller:       calc(#{$t_size_-2 + rem} + (#{$g_scala + vw} / 10));
+$t_font_size_small:         calc(#{$t_size_-1 + rem} + (#{$g_scala + vw} / 10));
+$t_font_size_root:          calc(#{$t_size_0 + rem} + (#{$g_scala + vw} / 10));
+$t_font_size_large:         calc(#{$t_size_1 + rem} + (#{$g_scala + vw} / 10));
+$t_font_size_larger:        calc(#{$t_size_2 + rem} + (#{$g_scala + vw} / 10));
+$t_font_size_giant:         calc(#{$t_size_7 + rem} + (#{$g_scala + vw} / 10));
+
+$t_font_size_entry_title:   calc(#{$t_size_5 + rem} + (#{$g_scala + vw} / 10));
+
+$t_font_size_h1:            calc(#{$t_size_5 + rem} + (#{$g_scala + vw} / 10));
+$t_font_size_h2:            calc(#{$t_size_4 + rem} + (#{$g_scala + vw} / 10));
+$t_font_size_h3:            calc(#{$t_size_3 + rem} + (#{$g_scala + vw} / 10));
+$t_font_size_h4:            calc(#{$t_size_2 + rem} + (#{$g_scala + vw} / 10));
+$t_font_size_h5:            calc(#{$t_size_1 + rem} + (#{$g_scala + vw} / 10));
+$t_font_size_h6:            calc(#{$t_size_0 + rem} + (#{$g_scala + vw} / 10));
+
+$t_line-height: $g_scala * $g_scala;
+$t_line-height_small: $g_scala / $g_scala;
+
+
+
+/* ### Responsive typography
+---------------------------------------------------------------------- */
+
+$t_font_default:        ($t_font_size_root, $t_line-height, 300);
+
+$t_font_smallest:       ($t_font_size_smallest, $t_line-height);
+$t_font_smaller:        ($t_font_size_smaller, $t_line-height);
+$t_font_small:          ($t_font_size_small, $t_line-height);
+$t_font_large:          ($t_font_size_large, $t_line-height);
+$t_font_larger:         ($t_font_size_larger, $t_line-height);
+
+$t_font_h1:             ($t_font_size_h1, $t_line-height_small, 300);
+$t_font_h2:             ($t_font_size_h2, $t_line-height_small, 300);
+$t_font_h3:             ($t_font_size_h3, $t_line-height_small, 300);
+$t_font_h4:             ($t_font_size_h4, $t_line-height_small, 300);
+$t_font_h5:             ($t_font_size_h5, $t_line-height_small, 300);
+$t_font_h6:             ($t_font_size_h6, $t_line-height_small, 400);
+
+$t_font_entry_title:    ($t_font_size_entry_title, $t_line-height_small, 300);
+
+
+/* ### Font family
+---------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,500;0,600;1,200;1,300;1,500&display=swap');
+
+/* Global Font Faminly */
+$font-bread:        'Montserrat', Helvetica, Arial, sans-serif;
+$font-bold:         'Montserrat', Helvetica, Arial, sans-serif;
+$font-black:        'Montserrat', Helvetica, Arial, sans-serif;
+$font-headlines:    'Montserrat', Helvetica, Arial, sans-serif;
+$font-hero:         'Montserrat', Helvetica, Arial, sans-serif;
+$font-navigation:   'Montserrat', Helvetica, Arial, sans-serif;
+
+
+/* ## Border Radius
+---------------------------------------------------------------------- */
+/* Globals */
+$radius: .5;
+
+/* ## Colored Gridcontainer
+---------------------------------------------------------------------- */
+$g_gridcontainer-light:                 shade($color-tint, 10%);
+$g_gridcontainer-light-font-color:      $color-shade;
+$g_gridcontainer-medium:                $color-secondary;
+$g_gridcontainer-medium-font-color:     $color-tint;
+$g_gridcontainer-dark:                  shade($color-primary, 0%);
+$g_gridcontainer-dark-font-color:       $color-tint;
+
+/* ## Media Queries
+---------------------------------------------------------------------- */
+$mq-phone:      37em;       /* 592 pixel */
+$mq-tablet:     48em;       /* 768 pixel */
+$mq-nav:        63.938em;   /* 1023 pixel */
+$mq-tabletbig:  64em;       /* 1024 pixel */
+$mq-laptop:     80em;       /* 1280 pixel */
+$mq-desktop:    100em;      /* 1600 pixel */
+$mq-large:      120em;      /* 1920 pixel */
+$mq-huge:       155em;      /* 2480 pixel */ 
+
+
+/* ## Site Structure
+---------------------------------------------------------------------- */
+
+$g_margin: calc(#{$t_root + em} + (#{$g_scala + vw}));
+
+/* ## Responsive Typography
+---------------------------------------------------------------------- */
+:root {
+    --type-scale:     1.2; // Type Scale
+    --type-root:      1.6; // Minimum body font size 1/10 of pixel size
+    --type-root-max:  2.0; // Maximum body font size 1/10 of pixel size
+
+    --type-line-height-body:    1.5;
+    --type-line-height-headine: 1.2;
+    --type-line-height-button:  1;
+    
+    --type--2:                  calc(var(--type--1) / var(--type-scale));
+    --type--1:                  calc(var(--type-0) / var(--type-scale));
+    --type-0:                   calc(var(--type-root) * 1rem);
+    --type-1:                   calc(var(--type-0) * var(--type-scale));
+    --type-2:                   calc(var(--type-1) * var(--type-scale));
+    --type-3:                   calc(var(--type-2) * var(--type-scale));
+    --type-4:                   calc(var(--type-3) * var(--type-scale));
+    --type-5:                   calc(var(--type-4) * var(--type-scale));
+    --type-6:                   calc(var(--type-5) * var(--type-scale));
+    --type-7:                   calc(var(--type-6) * var(--type-scale));
+    --type-8:                   calc(var(--type-7) * var(--type-scale));
+    --type-9:                   calc(var(--type-8) * var(--type-scale));
+    --type-10:                  calc(var(--type-9) * var(--type-scale));
+    --type-huge:                var(--type-6);
+    --type-giant:               var(--type-5);
+    
+    --type--2-max:                  calc(var(--type--1-max) / var(--type-scale));
+    --type--1-max:                  calc(var(--type-0-max) / var(--type-scale));
+    --type-0-max:                   calc(var(--type-root-max) * 1rem);
+    --type-1-max:                   calc(var(--type-0-max) * var(--type-scale));
+    --type-2-max:                   calc(var(--type-1-max) * var(--type-scale));
+    --type-3-max:                   calc(var(--type-2-max) * var(--type-scale));
+    --type-4-max:                   calc(var(--type-3-max) * var(--type-scale));
+    --type-5-max:                   calc(var(--type-4-max) * var(--type-scale));
+    --type-6-max:                   calc(var(--type-5-max) * var(--type-scale));
+    --type-7-max:                   calc(var(--type-6-max) * var(--type-scale));
+    --type-8-max:                   calc(var(--type-7-max) * var(--type-scale));
+    --type-9-max:                   calc(var(--type-8-max) * var(--type-scale));
+    --type-10-max:                  calc(var(--type-9-max) * var(--type-scale));
+    --type-huge-max:                var(--type-8-max);
+    --type-giant-max:               var(--type-9-max);
+    
+    --type--2-responsive:               clamp(var(--type--2), calc(var(--type-scale) / var(--type-scale) / var(--type-scale) * 1vw), var(--type--1-max));
+    --type--1-responsive:               clamp(var(--type--1), calc(var(--type-scale) / var(--type-scale) * 1vw), var(--type--1-max));
+    // Default body font size
+    --type-0-responsive:                clamp(var(--type-0), calc(var(--type-scale) * 1vw), var(--type-0-max));  
+    --type-1-responsive:                clamp(var(--type-1), calc(var(--type-scale) * var(--type-scale) * 1vw), var(--type-1-max));
+    --type-2-responsive:                clamp(var(--type-2), calc(var(--type-scale) * var(--type-scale) * var(--type-scale) * 1vw), var(--type-2-max));
+    --type-3-responsive:                clamp(var(--type-3), calc(var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * 1vw), var(--type-3-max));
+    --type-4-responsive:                clamp(var(--type-4), calc(var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * 1vw), var(--type-4-max));
+    --type-5-responsive:                clamp(var(--type-5), calc(var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * 1vw), var(--type-5-max));
+    --type-6-responsive:                clamp(var(--type-6), calc(var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * 1vw),  var(--type-6-max));
+    --type-7-responsive:                clamp(var(--type-7),  calc(var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * 1vw), var(--type-7-max));
+    --type-huge-responsive:             clamp(var(--type-huge),  calc(var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * 1vw), var(--type-huge-max));
+    --type-giant-responsive:            clamp(var(--type-giant),  calc(var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale) * 1vw), var(--type-giant-max));
+}
+/* ## Typography types
+---------------------------------------------------------------------- */
+:root {
+    --type-small:       var(--type--1-responsive);
+    --type-smaller:     var(--type--2-responsive);
+    --type-body:        var(--type-0-responsive);
+    --type-large:       var(--type-1-responsive);
+    --type-larger:      var(--type-2-responsive);
+    --type-h6:          var(--type-1-responsive);
+    --type-h5:          var(--type-2-responsive);
+    --type-h4:          var(--type-3-responsive);
+    --type-h3:          var(--type-4-responsive);
+    --type-h2:          var(--type-5-responsive);
+    --type-h1:          var(--type-6-responsive);
+    --type-entry-title: var(--type-6-responsive)
+}
+/* ### Font family
+---------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,500;0,600;1,200;1,300;1,500&display=swap');
+
+/* Global Font Faminly */
+$font-bread:        'Montserrat', Helvetica, Arial, sans-serif;
+$font-bold:         'Montserrat', Helvetica, Arial, sans-serif;
+$font-black:        'Montserrat', Helvetica, Arial, sans-serif;
+$font-headlines:    'Montserrat', Helvetica, Arial, sans-serif;
+$font-hero:         'Montserrat', Helvetica, Arial, sans-serif;
+$font-navigation:   'Montserrat', Helvetica, Arial, sans-serif;
+
+:root {
+    --font-body:        'Montserrat', Helvetica, Arial, sans-serif;
+    --font-headline:    'Montserrat', Helvetica, Arial, sans-serif;
+    --font-navigation:  'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+/* ## Responsive margin
+---------------------------------------------------------------------- */
+:root {
+    --margin-0:calc((var(--type-scale) * 1rem) + (var(--type-scale) * 1vw)); // Default margin size
+    --margin-1:calc(var(--margin-0) * 1.5);
+    --margin-2:calc(var(--margin-0) * 2);
+    --margin-3:calc(var(--margin-0) * 2.5);
+    --margin-4:calc(var(--margin-0) * 3);
+    --margin-5:calc(var(--margin-0) * 3.5);
+    --margin-6:calc(var(--margin-0) * 4);
+    
+    --margin--1:calc(var(--margin-0) / 1.5);
+    --margin--2:calc(var(--margin-0) / 2);
+    --margin--3:calc(var(--margin-0) / 2.5);
+}
+/* ## Reading measure
+---------------------------------------------------------------------- */
+:root{
+    --measure-0: 65ch;
+}
+/* ## Transitions
+---------------------------------------------------------------------- */
+:root {
+    --transition-default:   all 0.2s ease-in-out;
+    --transition-color:     color 0.2s ease-in-out;
+}

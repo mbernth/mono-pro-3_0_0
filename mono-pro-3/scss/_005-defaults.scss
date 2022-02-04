@@ -1,0 +1,633 @@
+/* # Defaults
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Typographical Elements
+---------------------------------------------------------------------- */
+
+html {
+		font-size: 62.5%; /* 10px browser default */
+		scroll-behavior: smooth;
+		background-color: $g_body-background-color;
+		height: 100%;
+		display: block;
+}
+
+body {
+	font-family: var(--font-body);
+	font-size: var(--type-0-responsive);
+	font-weight: 300;
+	line-height: var(--type-line-height-body);
+	color: $g_font_color_default;
+	background-color: $g_body-background-color;
+	margin: 0;
+	height: 100%;
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.gallery img {
+	-webkit-transition: var(--transition-default);
+	-moz-transition:    var(--transition-default);
+	-ms-transition:     var(--transition-default);
+	-o-transition:      var(--transition-default);
+	transition:         var(--transition-default);
+}
+
+a {
+}
+
+a:hover,
+a:focus {
+}
+*:focus{
+	outline: none;
+	box-shadow: 
+	  0 0 10px 2px rgba(239, 64, 92, 0.2),
+      0 0 0 0 rgba(239, 64, 92, 0.5);
+}
+
+a:not([class]) {
+	font-weight: 400;
+	text-decoration: none;
+	color: $g_font-bread-a-color;
+	-webkit-transition: var(--transition-default);
+	-moz-transition:    var(--transition-default);
+	-ms-transition:     var(--transition-default);
+	-o-transition:      var(--transition-default);
+	transition:         var(--transition-default);
+  
+	&:hover,
+	&:focus {
+		color: $g_font-bread-a-hover-color;
+		text-decoration: underline;
+	}
+  }
+
+p {
+	margin: 0;
+}
+
+mark {
+	background: $g_font-mark-background-color;
+	color: $g_font-mark-color;
+	padding:0 0.125em;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin:0;
+}
+
+ol{
+	list-style: none;
+	counter-reset: li;
+}
+ol li{
+	counter-increment: li;
+}
+
+ol li::before{
+	font-family: var(--font-headline);
+	content: '.'counter(li);
+	display: inline-block;
+	width: 1em;
+	margin-left: -1.5em;
+	margin-right: 0.5em;
+	text-align: right;
+	direction: rtl;
+}
+
+hr {
+	border: 0;
+	border-collapse: collapse;
+	border-top: 1px solid $color-shade;
+	clear: both;
+	margin: var(--margin-0) 0;
+}
+
+b,
+strong {
+	font-weight: 600;
+}
+
+blockquote,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	font-size: var(--type-1-responsive);
+	margin: 0;
+	padding: 0 var(--margin-0);
+}
+cite{
+	font-weight: 400;
+	font-style: normal;
+}
+.large_font_size{
+	font-size: var(--type-1-responsive);
+}
+
+figure{
+	position: relative;
+	img{
+		display: block;
+	}
+}
+figcaption{
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: .5em 1em;
+	font-size: var(--type--1-responsive);
+	color: $color-tint;
+	background-color: rgba(0, 11, 18, 0.5);
+}
+
+/* ## Headings
+---------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-headline);
+	line-height: var(--type-line-height-headine);
+	margin: 0;
+}
+
+h1 {
+	font-size: var(--type-h1);
+}
+
+h2 {
+	font-size: var(--type-h2);
+}
+
+h3 {
+	font-size: var(--type-h3);
+}
+
+h4 {
+	font-size: var(--type-h4);
+}
+
+h5 {
+	font-size: var(--type-h5);
+}
+
+h6 {
+	font-size: var(--type-h6);
+}
+
+h1 a:not([class]),
+h2 a:not([class]),
+h3 a:not([class]),
+h4 a:not([class]),
+h5 a:not([class]),
+h6 a:not([class]){
+	text-decoration: none;
+}
+
+/* ## Objects
+---------------------------------------------------------------------- */
+
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+}
+
+.featured-content img,
+.gallery img {
+	width: auto;
+}
+
+/* ## Forms
+---------------------------------------------------------------------- */
+label {
+	font-size: var(--type-smaller);
+	font-weight: 600;
+	text-transform:uppercase;
+}
+input,
+textarea,
+select,
+select[multiple] {
+	border: 2px solid tint($color-shade, 80%);
+	background-color:transparent;
+	@include corners($radius);
+	padding:.5em 1em;
+	width: 100%;
+	&:hover{
+		border-color: $color-active;
+	}
+}
+
+select{
+	&[multiple] {
+		height:auto;
+		option:checked {
+			background-color: tint($color-active, 80%);
+		}
+	}
+}
+
+input[type="checkbox"],
+input[type="image"],
+input[type="radio"] {
+	width: auto;
+}
+
+/* Radio start */
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+   	position: absolute;
+   	left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label{
+   	position: relative;
+   	padding-left: 28px;
+   	cursor: pointer;
+   	line-height: 20px;
+   	display: inline-block;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+   	content: '';
+   	position: absolute;
+   	left: 0;
+   	top: 0;
+   	width: 18px;
+   	height: 18px;
+   	border: 2px solid $color-shade;
+   	border-radius: 100%;
+	background: transparent;
+	-webkit-transition: all 0.2s ease;
+   	transition: all 0.2s ease;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+   	content: '';
+   	width: 8px;
+   	height: 8px;
+   	background:$color-shade;
+   	position: absolute;
+   	top: 5px;
+   	left: 5px;
+   	border-radius: 100%;
+   	-webkit-transition: all 0.2s ease;
+   	transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+   	opacity: 0;
+   	-webkit-transform: scale(0);
+   	transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+   	opacity: 1;
+   	-webkit-transform: scale(1);
+   	transform: scale(1);
+}
+/* radio end */
+
+/* Checkbox start */
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
+   	position: absolute;
+   	left: -9999px;
+}
+[type="checkbox"]:checked + label,
+[type="checkbox"]:not(:checked) + label{
+   	position: relative;
+   	padding-left: 28px;
+   	cursor: pointer;
+   	line-height: 20px;
+   	display: inline-block;
+}
+[type="checkbox"]:checked + label:before,
+[type="checkbox"]:not(:checked) + label:before {
+   	content: '';
+   	position: absolute;
+   	left: 0;
+   	top: 0;
+   	width: 18px;
+   	height: 18px;
+   	border: 2px solid $color-shade;
+	background: transparent;
+	-webkit-transition: all 0.2s ease;
+   	transition: all 0.2s ease;
+}
+[type="checkbox"]:checked + label:after,
+[type="checkbox"]:not(:checked) + label:after {
+   	content: '';
+   	width: 8px;
+   	height: 8px;
+   	background:$color-shade;
+   	position: absolute;
+   	top: 5px;
+   	left: 5px;
+   	-webkit-transition: all 0.2s ease;
+   	transition: all 0.2s ease;
+}
+[type="checkbox"]:not(:checked) + label:after {
+   	opacity: 0;
+   	-webkit-transform: scale(0);
+   	transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+   	opacity: 1;
+   	-webkit-transform: scale(1);
+   	transform: scale(1);
+}
+/* Checkbox end */
+
+::-moz-placeholder,
+::-webkit-input-placeholder {
+	color: tint($color-shade, 40%);
+}
+
+.button{
+	display: block;
+	padding: .6em 1.5em;
+	text-align: left;
+	width: auto;
+	min-width: 180px;
+	line-height: $t_line-height_small;
+	text-decoration: none;
+	color: $g_font-button-background-color;
+	border-left: 5px solid $g_font-button-background-color;
+	box-shadow: inset 0 0 0 $g_font-button-background-color;
+	-webkit-transition: all 0.6s ease-in-out;
+	-moz-transition:    all 0.6s ease-in-out;
+	-ms-transition:     all 0.6s ease-in-out;
+	-o-transition:      all 0.6s ease-in-out;
+	transition:         all 0.6s ease-in-out;
+	&:hover{
+		color: tint($g_font-button-background-color, 100%);
+		box-shadow: inset 280px 0 0 $g_font-button-background-color;
+	}
+	&.button-primary{
+		color: $g_font-button-primary-background-color;
+		border-left: 5px solid $g_font-button-primary-background-color;
+		box-shadow: inset 0 0 0 $g_font-button-primary-background-color;
+		&:hover{
+			color: tint($g_font-button-primary-background-color, 100%);
+			box-shadow: inset 280px 0 0 $g_font-button-primary-background-color;
+		}
+	}
+	&.button-info{
+		color: $g_font-button-info-background-color;
+		border-left: 5px solid $g_font-button-info-background-color;
+		box-shadow: inset 0 0 0 $g_font-button-info-background-color;
+		&:hover{
+			color: tint($g_font-button-info-background-color, 100%);
+			box-shadow: inset 280px 0 0 $g_font-button-info-background-color;
+		}
+	}
+	&.button-alert{
+		color: $g_font-button-alert-background-color;
+		border-left: 5px solid $g_font-button-alert-background-color;
+		box-shadow: inset 0 0 0 $g_font-button-alert-background-color;
+		&:hover{
+			color: tint($g_font-button-alert-background-color, 100%);
+			box-shadow: inset 280px 0 0 $g_font-button-alert-background-color;
+		}
+	}
+}
+
+.button-active{
+	border: 0;
+	cursor: pointer;
+	color: $g_font-button-color;
+	text-align: center;
+	text-decoration: none;
+	background-color: $g_font-button-background-color;
+	@include corners($g_font-button_radius);
+	padding: .6em 1.5em;
+	width: auto;
+	border-left: 0px solid $g_font-button-background-color;
+	box-shadow: inset 0 0 0 $g_font-button-background-color;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition:    all 0.3s ease-in-out;
+	-ms-transition:     all 0.3s ease-in-out;
+	-o-transition:      all 0.3s ease-in-out;
+	transition:         all 0.3s ease-in-out;
+	&:hover,
+	&:focus{
+		color: $g_font-button-color-hover;
+		background-color: $g_font-button-background-color-hover;
+	}
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 0;
+	cursor: pointer;
+	line-height: $t_line-height_small;
+	font-weight: 500;
+	color: $g_font-button-color;
+	text-align: center;
+	text-decoration: none;
+	background-color: $g_font-button-background-color;
+	@include corners($g_font-button_radius);
+	padding: .6em 1.5em;
+	width: auto;
+	min-width:180px;
+	&:hover,
+	&:focus{
+		color: $g_font-button-color-hover;
+		background-color: $g_font-button-background-color-hover;
+		box-shadow: $g_font-button-box-shadow-hover;
+	}
+	&.disabled{
+		color:$g_font-button-disabled-color;
+		background-color: $g_font-button-disabled-background-color;
+		cursor: default;
+		&:hover,
+		&:focus{
+			color:$g_font-button-disabled-color-hover;
+			background-color: $g_font-button-disabled-background-color-hover;
+			box-shadow: $g_font-button-disabled-box-shadow-hover;
+		}
+	}
+	&.button-primary{
+		color:$g_font-button-primary-color;
+		background-color: $g_font-button-primary-background-color;
+		&:hover,
+		&:focus{
+			color:$g_font-button-primary-color-hover;
+			background-color: $g_font-button-primary-background-color-hover;
+			box-shadow: $g_font-button-primary-box-shadow-hover;
+		}
+	}
+	&.button-info{
+		color:$g_font-button-info-color;
+		background-color: $g_font-button-info-background-color;
+		&:hover,
+		&:focus{
+			color:$g_font-button-info-color-hover;
+			background-color: $g_font-button-info-background-color-hover;
+			box-shadow: $g_font-button-info-box-shadow-hover;
+		}
+	}
+	&.button-alert{
+		color:$g_font-button-alert-color;
+		background-color: $g_font-button-alert-background-color;
+		&:hover,
+		&:focus{
+			color:$g_font-button-alert-color-hover;
+			background-color: $g_font-button-alert-background-color-hover;
+			box-shadow: $g_font-button-alert-box-shadow-hover;
+		}
+	}
+}
+
+.footer-widgets input[type="text"],
+.footer-widgets input[type="email"],
+.footer-widgets input[type="number"] {
+	border: none;
+	background-color: tint($color-primary, 80%);
+	&:focus{
+		background-color: tint($color-primary, 95%);
+	}
+}
+
+/* ### Gravity form
+--------------------------------------------- */
+.gform_body div span label {
+	display: flow-root;
+	font-size: var(--type-smaller);
+	text-transform:none;
+	margin-bottom: calc(#{$g_scala} * #{$g_scala + rem} );
+}
+
+.gform_wrapper{
+	ul{
+		list-style: none;
+		margin: 0;
+		li{
+			margin-bottom: calc(#{$g_scala} * #{$g_scala + rem} );
+		}
+	}
+}
+.entry-content{
+	.gform_wrapper{
+		ul{
+			margin: 0;
+		}
+	}
+}
+.gform_footer{
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: calc(#{$g_scala} * #{$g_scala + rem} );
+}
+
+.gfield_required{
+	color: $color-accent-three;
+}
+.gfield_error{
+	input[type="text"],
+	input[type="email"],
+	input[type="number"]{
+		border: 2px solid tint($color-accent-three, 60%);
+		background-color: tint($color-accent-three, 90%);
+	}
+}
+.validation_message{
+	background-color: $color-accent-three;
+	color: $color-tint;
+	margin-top: 5px;
+	padding: 10px 15px;
+	animation: fadeIn 0.3s ease-in-out both;
+}
+
+/* ## Tables
+---------------------------------------------------------------------- */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: 2;
+	margin-bottom: 40px;
+	width: 100%;
+}
+
+tbody {
+	border-bottom: 1px solid $color-shade;
+}
+
+td,
+th {
+	text-align: left;
+}
+
+td {
+	border-top: 1px solid $color-shade;
+	padding: 6px 0;
+}
+
+th {
+	font-weight: 400;
+}
+
+/* ## Screen Reader Text
+---------------------------------------------------------------------- */
+
+.screen-reader-text,
+.screen-reader-text span,
+.screen-reader-shortcut {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus,
+.screen-reader-shortcut:focus,
+.genesis-nav-menu .search input[type="submit"]:focus,
+.widget_search input[type="submit"]:focus  {
+	clip: auto !important;
+	height: auto;
+	width: auto;
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 15px 23px 14px;
+	color: $color-shade;
+	background: $color-tint;
+	z-index: 100000; /* Above WP toolbar. */
+	text-decoration: none;
+	box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+}
+
+.more-link {
+    position: relative;
+}

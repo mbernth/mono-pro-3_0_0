@@ -1,0 +1,364 @@
+/* # Max Width Nav
+---------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: $mq-nav) {
+// Table of Contents
+
+
+//	- 001 # HTML5 Reset
+// ----------------------------------------------------------------------------------------------------
+//		    ## Baseline Normalize
+//		    ## Box Sizing
+//          ## Float Clearing
+
+//  - 002 # Mixins
+// ----------------------------------------------------------------------------------------------------
+//	        ## Typography
+//	        ## Border Radius
+//	        ## Gradients
+//          ## Grid
+//          ## Tint and shade
+
+//  - 003 # Variables
+// ----------------------------------------------------------------------------------------------------
+//	        ## Colours
+//	        ## Typography
+//	        ## Media Queries
+//          ## Site Structure
+
+//  - 004 # Arrays
+// ----------------------------------------------------------------------------------------------------
+//	        ## Breakpoints
+//	        ## Responsive Typography
+//			## Gutenberg
+//				### Color mixins
+//				### Gutenberg Front-end Styles
+
+//	- 005 # Defaults
+// ----------------------------------------------------------------------------------------------------
+//			## Typographical Elements
+//			## Headings
+//			## Objects
+//			## Forms
+//				### Forms Colored Rows
+//			## Tables
+//			## Screen Reader Text
+
+//	- 006 # Structure and Layout
+// ----------------------------------------------------------------------------------------------------
+//			## Site Container
+//			## Site Inner
+//			## Grid Containers
+//				### Grid Containers coloured backgrounds
+body.fixed .site-container{
+    position: fixed;
+    overflow: auto;
+    width: 100%;
+}
+
+//	- 007 # Common Classes
+// ----------------------------------------------------------------------------------------------------
+//			## Avatar
+//			## Genesis
+//			## Search Form
+//			## Titles
+//			## WordPress
+
+//	- 008 # Widgets
+// ----------------------------------------------------------------------------------------------------
+//			## Featured Content
+
+//	- 009 # Plugins
+// ----------------------------------------------------------------------------------------------------
+//			## Skip Links
+
+//	- 010 # Site Header
+// ----------------------------------------------------------------------------------------------------
+//			## Title Area
+.site-header{
+    .wrap{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+//	- 011 # Site Navigation
+// ----------------------------------------------------------------------------------------------------
+//			## Header Menu
+//			## Footer Menu
+//			## Accessible Menu
+body.fixed .nav-primary{
+    background-color: $color-secondary;
+    height: 100%;
+    overflow: scroll;
+}
+
+.genesis-responsive-menu .genesis-nav-menu .sub-menu a,
+.genesis-responsive-menu .genesis-nav-menu .sub-menu,
+.js .nav-primary {
+    width: 100%;
+}
+.genesis-nav-menu li {
+    float: none;
+}
+
+.genesis-responsive-menu .wrap {
+    padding: 83px 0;
+    width: 90%;
+}
+
+.genesis-responsive-menu {
+    display: none;
+    position: relative;
+}
+
+.site-header > .wrap > .genesis-responsive-menu {
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
+    z-index: 500;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition:    all 0.3s ease-in-out;
+	-ms-transition:     all 0.3s ease-in-out;
+	-o-transition:      all 0.3s ease-in-out;
+    transition:         all 0.3s ease-in-out;
+    &.open{
+        top: 0;
+    }
+}
+
+.menu-toggle,
+.sub-menu-toggle {
+    border-width: 0;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    visibility: visible;
+    width: auto;
+}
+
+.menu-toggle:focus,
+.menu-toggle:hover,
+.sub-menu-toggle:focus,
+.sub-menu-toggle:hover {
+    background: transparent;
+    border-width: 0;
+    box-shadow: none;
+}
+
+.js .genesis-nav-menu > .menu-item .sub-menu > .menu-item:first-child,
+.js .genesis-nav-menu > .menu-item > .sub-menu > .menu-item:last-child,
+.js .genesis-nav-menu .sub-menu a {
+    background-color: transparent;
+    color: $color-shade;
+}
+
+.js #genesis-mobile-nav-primary{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 83px;
+    min-width: unset;
+    background-color: $color-primary;
+    font-size: var(--type-small);
+    font-weight: 600;
+    color: $color-primary;
+    text-align: left;
+    text-indent: -54px;
+    text-shadow: none;
+    border-radius: 0px;
+    overflow: visible;
+    -webkit-transition: var(--transition-default);
+	-moz-transition:    var(--transition-default);
+	-ms-transition:     var(--transition-default);
+	-o-transition:      var(--transition-default);
+    transition:         var(--transition-default);
+    z-index: 600;
+    &::before{
+        position: absolute;
+        display: block;
+        content: '';
+        background-color: $color-tint;
+        height: 4px;
+        width: 25px;
+        border-radius: 2px;
+        z-index: 1000;
+        top: calc(50% - 7px);
+        left: calc(50% - 12.5px);
+        -webkit-transition: var(--transition-default);
+	    -moz-transition:    var(--transition-default);
+	    -ms-transition:     var(--transition-default);
+	    -o-transition:      var(--transition-default);
+        transition:         var(--transition-default);
+    }
+    &::after{
+        position: absolute;
+        display: block;
+        content: '';
+        background-color: $color-tint;
+        height: 4px;
+        width: 25px;
+        border-radius: 2px;
+        z-index: 1000;
+        top: calc(50% - 1px);
+        left: calc(50% - 12.5px);
+        -webkit-transition: var(--transition-default);
+	    -moz-transition:    var(--transition-default);
+	    -ms-transition:     var(--transition-default);
+	    -o-transition:      var(--transition-default);
+        transition:         var(--transition-default);
+    }
+}
+
+#genesis-mobile-nav-primary.activated {
+    border-bottom-color: transparent;
+    color: $color-active;
+    &::before{
+        background-color: $color-active;
+        top: calc(50% - 3px);
+        transform: rotate(-45deg);
+    }
+    &::after{
+        background-color: $color-active;
+        top: calc(50% - 3px);
+        transform: rotate(45deg);
+    }
+}
+
+#genesis-mobile-nav-primary:focus,
+#genesis-mobile-nav-primary:hover {
+    color: $color-active;
+    &::before,
+    &::after{
+        background-color: $color-active;
+    }
+}
+
+.menu-toggle {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+}
+
+.menu-toggle::before {
+    margin-right: 5px;
+    text-rendering: auto;
+    vertical-align: bottom;
+}
+
+.sub-menu-toggle {
+    background: transparent;
+    float: right;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    z-index: 100;
+    &::before{
+        content: '';
+        display: inline-block;
+        border-left:    7px solid transparent;
+        border-right:   7px solid transparent;
+        border-bottom:  7px solid $color-active;
+        transform: rotate(180deg);
+        transition: transform 0.25s ease-in-out;
+    }
+}
+
+.sub-menu-toggle.activated::before {
+    transform: rotate(0deg);
+}
+
+.genesis-responsive-menu .genesis-nav-menu .menu-item {
+    display: block;
+    float: none;
+    position: relative;
+    text-align: left;
+    padding: 15px 0;
+}
+
+.genesis-responsive-menu .genesis-nav-menu .menu-item:focus,
+.genesis-responsive-menu .genesis-nav-menu .menu-item:hover {
+    position: relative;
+}
+
+.genesis-responsive-menu .genesis-nav-menu a:focus,
+.genesis-responsive-menu .genesis-nav-menu a:hover,
+.genesis-responsive-menu .genesis-nav-menu .sub-menu .menu-item a:focus,
+.genesis-responsive-menu .genesis-nav-menu .sub-menu .menu-item a:hover,
+.genesis-responsive-menu.nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a {
+    color: $color-active;
+}
+
+.genesis-responsive-menu .genesis-nav-menu .menu-item a,
+.genesis-responsive-menu .toggle-header-search {
+    border: none;
+    margin-bottom: 1px;
+    padding: 0px 4px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.genesis-responsive-menu.nav-primary .genesis-nav-menu .sub-menu a {
+    color: $color-shade;
+}
+
+.genesis-nav-menu > .menu-item .sub-menu > .menu-item:first-child {
+    padding-top: 0;
+}
+
+.genesis-nav-menu > .menu-item .sub-menu > .menu-item:last-child {
+    padding-bottom: 5px;
+}
+
+.genesis-responsive-menu .genesis-nav-menu .sub-menu::after,
+.genesis-responsive-menu .genesis-nav-menu .sub-menu::before,
+.genesis-responsive-menu .genesis-nav-menu > .menu-item-has-children > a::after {
+    content: none;
+}
+
+.genesis-responsive-menu .genesis-nav-menu .menu-item > a:focus ul.sub-menu,
+.genesis-responsive-menu .genesis-nav-menu .menu-item > a:focus ul.sub-menu .sub-menu {
+    left: 0;
+    margin-left: 0;
+}
+
+.genesis-responsive-menu .genesis-nav-menu .sub-menu {
+    padding-top: 20px;
+    margin: 20px 0 0 0;
+    border-top: 1px solid $color-primary;
+    clear: both;
+    display: none;
+    opacity: 1;
+    position: static;
+    width: 100%;
+    li{
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+.genesis-responsive-menu .toggle-header-search {
+    display: none;
+}
+
+//	- 012 # Content Area
+// ----------------------------------------------------------------------------------------------------
+//			## Entries
+//			## Entry Messages
+//			## Entry Meta
+//			## Pagination
+//			## Comments
+
+//	- 013 # Sidebar
+// ----------------------------------------------------------------------------------------------------
+
+//	- 014 # Site Footer
+// ----------------------------------------------------------------------------------------------------
+
+}

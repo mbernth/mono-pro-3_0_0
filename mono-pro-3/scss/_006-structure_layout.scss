@@ -1,0 +1,223 @@
+/* # Structure and Layout
+---------------------------------------------------------------------------------------------------- */
+.site-container{
+	position: relative;
+	// overflow: auto;
+	overflow: hidden;
+}
+.before-header{
+	position: relative;
+}
+.site-header{
+	position: relative;
+}
+.featured-section{
+	position: relative;
+}
+.nav-secondary{
+	position: relative;
+}
+.breadcrumb{
+	position: relative;
+}
+.site-inner{
+	position: relative;
+	z-index: 200;
+}
+.footer-widgets{
+	position: relative;
+	z-index: 200;
+}
+.site-footer{
+	position: relative;
+	z-index: 200;
+}
+@supports (display: grid) {
+	.site-container{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"before-header"
+			"site-header"
+			"featured-section"
+			"nav-secondary"
+			"breadcrumb"
+			"site-inner"
+			"footer-widgets"
+			"site-footer"
+			;
+		.before-header{
+			grid-area:before-header;
+		}
+		.site-header{
+			grid-area:site-header;
+		}
+		.featured-section{
+			grid-area: featured-section;
+		}
+		.nav-secondary{
+			grid-area:nav-secondary;
+		}
+		.breadcrumb{
+			grid-area:breadcrumb;
+		}
+		.site-inner{
+			grid-area:site-inner;
+		}
+		.footer-widgets{
+			grid-area:footer-widgets;
+		}
+		.site-footer{
+			grid-area:site-footer;
+		}
+	}
+}
+/* ## Site Inner
+---------------------------------------------------------------------- */
+
+.site-inner,
+.wrap {
+	margin: 0 auto;
+}
+
+.site-inner{
+	display: block;
+	margin: 0;
+	width:100%;
+	overflow: hidden;
+	background: $color-tint;
+	hyphens: auto;
+}
+
+.site-inner .content .breadcrumb{
+	width: 90%;
+}
+
+/* ## Content Entry
+---------------------------------------------------------------------- */
+.entry-content{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	&> * + *{
+		margin-top: var(--margin-0);
+	}
+}
+.content .entry{
+	width: 90%;
+	max-width: var(--measure-0);
+	margin: 0px auto;
+	.entry-header{
+		margin-top: var(--margin-0);
+		padding-top: var(--margin-0);
+	}
+}
+/* ## Archive Entry
+---------------------------------------------------------------------- */
+.archive{
+	.content .entry{
+		margin-bottom: var(--margin-0);
+		padding-bottom: var(--margin-0);
+		.entry-header{
+			margin-top: calc(#{$g_scala} * #{$g_scala + em});
+			padding-top: 0;
+			.entry-title{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+/* ## Single Entry
+---------------------------------------------------------------------- */
+.single{
+	.content .entry{
+		margin-bottom: var(--margin-0);
+		padding-bottom: var(--margin-0);
+	}
+}
+/* ## Team Archive Entry
+---------------------------------------------------------------------- */
+.team-member-archive{
+	.content-sidebar-wrap{
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+		@include max-width-values($g_site_measure);
+		// max-width: $g_measure;
+	}
+	.content .entry{
+		width: 100%;
+		max-width: 100%;
+	}
+	.archive-description{
+		width: 100%;
+		max-width: 100%;
+	}
+	.archive-pagination{
+		width: 100%;
+		max-width: 100%;
+	}
+	figure{
+		position: relative;
+		margin-bottom: 10px;
+		img{
+			display: block;
+			object-fit: cover;
+			max-width: unset;
+			width: 100%;
+			height: auto;
+		}
+		.onleave{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			padding: 5px 15px;
+			color: $color-tint;
+			background-color: $color-active;
+		}
+	}
+		.name,
+		.title{
+			display: block;
+		}
+		.name{
+			font-weight: 400;
+		}
+		.title{
+			font-style: italic;
+			margin-bottom: 10px;
+		}
+		.biography{
+			font-size: var(--type-smaller);
+			margin-bottom: 20px;
+		}
+		.onleave,
+		.email,
+		.phone{
+			display: flex;
+			align-items: center;
+			[class^="icon-"], .contact [class*=" icon-"]{
+				width: 22px;
+				height: 22px;
+				border-radius: 30px;
+				padding: 4px;
+				margin-right: 10px;
+			}
+		}
+		.onleave{
+			[class^="icon-"], .contact [class*=" icon-"]{
+				color: $color-active;
+				fill: $color-active;
+				background-color: $color-tint;
+			}
+		}
+		.email,
+		.phone{
+			[class^="icon-"], .contact [class*=" icon-"]{
+				color: $color-tint;
+				fill: $color-tint;
+				background-color: $color-active;
+			}
+		}
+}

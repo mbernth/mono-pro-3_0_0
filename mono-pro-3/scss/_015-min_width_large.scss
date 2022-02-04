@@ -1,0 +1,171 @@
+/* # Min Width Large
+---------------------------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: $mq-large) {
+// Table of Contents
+
+
+//	- 001 # HTML5 Reset
+// ----------------------------------------------------------------------------------------------------
+//		    ## Baseline Normalize
+//		    ## Box Sizing
+//          ## Float Clearing
+
+//  - 002 # Mixins
+// ----------------------------------------------------------------------------------------------------
+//	        ## Typography
+//	        ## Border Radius
+//	        ## Gradients
+//          ## Grid
+//          ## Tint and shade
+
+//  - 003 # Variables
+// ----------------------------------------------------------------------------------------------------
+//	        ## Colours
+//	        ## Typography
+//	        ## Media Queries
+//          ## Site Structure
+
+//  - 004 # Arrays
+// ----------------------------------------------------------------------------------------------------
+//	        ## Breakpoints
+//	        ## Responsive Typography
+//			## Gutenberg
+//				### Color mixins
+//				### Gutenberg Front-end Styles
+// 				### Hero Video
+//				### Images and text block
+
+/* ### Gutenberg Front-end styles
+---------------------------------------------------------------------- */
+.wp-block-pullquote.is-style-solid-color.alignleft{
+    margin-left: -200px;
+    max-width: calc(50% + 100px);
+}
+.wp-block-pullquote.is-style-solid-color.alignright{
+    margin-right: -200px;
+    max-width: calc(50% + 100px);
+}
+
+/* ### Images and text block
+---------------------------------------------------------------------- */
+@supports (display: grid) {
+    .block-images-text.alignfull{
+        .section-content{
+            .section-media{
+				grid-column: 1 / span 7;
+			}
+			.section-text{
+				grid-column: 8 / span 5;
+            }
+            &:nth-child(even){
+				.section-media{
+					grid-column: 6 / span 7;
+				}
+				.section-text{
+					grid-column: 1 / span 5;
+				}
+			}
+        }
+    }
+}
+/* ### Flexible Grid block
+---------------------------------------------------------------------- */
+.gridcontainer{
+    &.coll2{
+        &.has-column-gap{
+            section {
+                width: calc(50% - 25px);
+            }
+        }
+	}
+	&.coll3{
+        &.has-column-gap{
+            section {
+                width: calc(33.3333% - 25px);
+            }
+        }
+	}
+	&.coll4{
+        &.has-column-gap{
+            section {
+                width: calc(25% - 25px);
+            }
+        }
+    }
+}
+@supports (display: grid) {
+    .gridcontainer{
+        &.coll2,
+        &.coll3,
+        &.coll4{
+            &.has-column-gap{
+                section {
+                    width: 100%;
+                }
+            }
+            section {
+                width: 100%;
+            }
+        }
+    }
+}
+//	- 005 # Defaults
+// ----------------------------------------------------------------------------------------------------
+//			## Typographical Elements
+//			## Headings
+//			## Objects
+//			## Forms
+//				### Forms Colored Rows
+//			## Tables
+//			## Screen Reader Text
+
+//	- 006 # Structure and Layout
+// ----------------------------------------------------------------------------------------------------
+//			## Site Container
+//			## Site Inner
+//			## Grid Containers
+//				### Grid Containers coloured backgrounds
+
+//	- 007 # Common Classes
+// ----------------------------------------------------------------------------------------------------
+//			## Avatar
+//			## Genesis
+//			## Search Form
+//			## Titles
+//			## WordPress
+
+//	- 008 # Widgets
+// ----------------------------------------------------------------------------------------------------
+//			## Featured Content
+
+//	- 009 # Plugins
+// ----------------------------------------------------------------------------------------------------
+//			## Skip Links
+
+//	- 010 # Site Header
+// ----------------------------------------------------------------------------------------------------
+//			## Title Area
+
+//	- 011 # Site Navigation
+// ----------------------------------------------------------------------------------------------------
+//			## Header Menu
+//			## Header Search
+//			## Footer Menu
+//			## Accessible Menu
+
+//	- 012 # Content Area
+// ----------------------------------------------------------------------------------------------------
+//			## Entries
+//			## Entry Messages
+//			## Entry Meta
+//			## Pagination
+//			## Comments
+
+//	- 013 # Sidebar
+// ----------------------------------------------------------------------------------------------------
+
+//	- 014 # Site Footer
+// ----------------------------------------------------------------------------------------------------
+
+}
